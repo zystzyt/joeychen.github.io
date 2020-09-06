@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Linux下操作ln -s指令出现File exists的解决方法</title>
+    <link href="/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <url>/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>操作ln -s给文件创建软链接时会出现以下情况，xxx文件以存在。</p><pre><code class="hljs javascript">ln: failed to create symbolic link <span class="hljs-string">&#x27;/usr/bin/xxx&#x27;</span>: File exists</code></pre><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><pre><code class="hljs javascript">rm -rf /usr/bin/xxx</code></pre><p>再进行ln -s操作就解决了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>我的第一条博客文章</title>
+    <link href="/2020/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/"/>
+    <url>/2020/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>remember</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
