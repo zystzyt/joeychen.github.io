@@ -17,10 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="Joey Chen">
   <meta name="keywords" content="">
-  <title>归档 - Joey_Chen的博客</title>
+  <title>Linux执行.sh文件出现cd xxx\r ：No such file or directory - Joey_Chen的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.6.2/gitalk.css" />
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -43,7 +58,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -137,7 +152,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/tMrvygQ.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -145,6 +160,43 @@
             <span class="h2" id="subtitle">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-08 23:00" pubdate>
+        2020年9月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      216 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -157,49 +209,131 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 3 篇文章</p>
-  <hr>
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/09/08/Linux%E6%89%A7%E8%A1%8C.sh%E6%96%87%E4%BB%B6%E5%87%BA%E7%8E%B0cd%20xxxr%20%EF%BC%9ANo%20such%20file%20or%20directory/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Linux执行.sh文件出现cd xxx\r ：No such file or directory</span>
-      <time style="float: right;">09-08</time>
-    </a>
-  
-    
-    <a href="/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Linux下操作ln -s指令出现File exists的解决方法</span>
-      <time style="float: right;">08-06</time>
-    </a>
-  
-    
-    <a href="/2020/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">我的第一条博客文章</span>
-      <time style="float: right;">08-01</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux执行.sh文件出现cd xxx\r ：No such file or directory</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="Linux执行-sh文件出现cd-xxx-r-：No-such-file-or-directory"><a href="#Linux执行-sh文件出现cd-xxx-r-：No-such-file-or-directory" class="headerlink" title="Linux执行.sh文件出现cd xxx\r ：No such file or directory"></a>Linux执行.sh文件出现cd xxx\r ：No such file or directory</h1><p>为了方便通常会在windows系统下创建好shell文件后上传到linux服务器里运行。运行后报错：No such file or directory（无此文件或目录）。大多是因为2个不同系统直接所用的文件格式不对应导致的。</p>
+<p>来到Linux服务器端，输入以下指令查看文件格式。</p>
+<div class="hljs"><pre><code class="hljs shell">cd File Directory   #“File Directory”为.sh文件所在的目录
+vi File name.sh     #“File name”为报错的.sh文件名</code></pre></div>
 
+<p>在命令模式下，也就是刚进去时的界面输入：</p>
+<div class="hljs"><pre><code class="hljs shell">:set ff   #查看文件格式</code></pre></div>
+<p>如返回值为 fileformat=dos ，输入以下指令把 “dos” 设置为 “unix” :</p>
+<div class="hljs"><pre><code class="hljs shell">:set ff=unix   #把.sh文件格式设置为unix
+：wq           #保存并退出vim编辑器</code></pre></div>
+<p>这时候在执行以下.sh文件就不会出问题了。</p>
 
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/shell/">shell</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vim/">vim</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">Linux下操作ln -s指令出现File exists的解决方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    function loadGitalk() {
+      addScript('https://cdn.staticfile.org/blueimp-md5/2.13.0/js/md5.min.js');
+      addScript('https://cdn.staticfile.org/gitalk/1.6.2/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: 'e9e72afad7af43e8c30b',
+          clientSecret: '45c70f1d0607558d9bc34007898127c63806265b',
+          repo: 'zystzyt.github.io',
+          owner: 'zystzyt',
+          admin: ["zystzyt"],
+          id: md5(location.pathname),
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        });
+        gitalk.render('gitalk-container');
+      });
+    }
+    waitElementVisible('gitalk-container', loadGitalk);
+  </script>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -421,10 +555,10 @@
       }
 
       // 如果是文章，请求文章的浏览数，并自增
-      if ('false' === 'true') {
+      if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/archives/2020/index.html');
+          var target = decodeURI('/2020/09/08/Linux%E6%89%A7%E8%A1%8C.sh%E6%96%87%E4%BB%B6%E5%87%BA%E7%8E%B0cd%20xxxr%20%EF%BC%9ANo%20such%20file%20or%20directory/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -486,6 +620,31 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -493,7 +652,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "Linux执行.sh文件出现cd xxx\r ：No such file or directory&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -508,6 +667,21 @@
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -521,6 +695,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 

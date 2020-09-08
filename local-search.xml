@@ -4,11 +4,40 @@
   
   
   <entry>
+    <title>Linux执行.sh文件出现cd xxx\r ：No such file or directory</title>
+    <link href="/2020/09/08/Linux%E6%89%A7%E8%A1%8C.sh%E6%96%87%E4%BB%B6%E5%87%BA%E7%8E%B0cd%20xxxr%20%EF%BC%9ANo%20such%20file%20or%20directory/"/>
+    <url>/2020/09/08/Linux%E6%89%A7%E8%A1%8C.sh%E6%96%87%E4%BB%B6%E5%87%BA%E7%8E%B0cd%20xxxr%20%EF%BC%9ANo%20such%20file%20or%20directory/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Linux执行-sh文件出现cd-xxx-r-：No-such-file-or-directory"><a href="#Linux执行-sh文件出现cd-xxx-r-：No-such-file-or-directory" class="headerlink" title="Linux执行.sh文件出现cd xxx\r ：No such file or directory"></a>Linux执行.sh文件出现cd xxx\r ：No such file or directory</h1><p>为了方便通常会在windows系统下创建好shell文件后上传到linux服务器里运行。运行后报错：No such file or directory（无此文件或目录）。大多是因为2个不同系统直接所用的文件格式不对应导致的。</p><p>来到Linux服务器端，输入以下指令查看文件格式。</p><pre><code class="hljs shell">cd File Directory   #“File Directory”为.sh文件所在的目录vi File name.sh     #“File name”为报错的.sh文件名</code></pre><p>在命令模式下，也就是刚进去时的界面输入：</p><pre><code class="hljs shell">:set ff   #查看文件格式</code></pre><p>如返回值为 fileformat=dos ，输入以下指令把 “dos” 设置为 “unix” :</p><pre><code class="hljs shell">:set ff=unix   #把.sh文件格式设置为unix：wq           #保存并退出vim编辑器</code></pre><p>这时候在执行以下.sh文件就不会出问题了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>shell</tag>
+      
+      <tag>vim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Linux下操作ln -s指令出现File exists的解决方法</title>
     <link href="/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <url>/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
     
-    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>操作ln -s给文件创建软链接时会出现以下情况，xxx文件以存在。</p><pre><code class="hljs javascript">ln: failed to create symbolic link <span class="hljs-string">&#x27;/usr/bin/xxx&#x27;</span>: File exists</code></pre><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><pre><code class="hljs javascript">rm -rf /usr/bin/xxx</code></pre><p>再进行ln -s操作就解决了。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>操作ln -s给文件创建软链接时会出现以下情况，xxx文件以存在。</p><pre><code class="hljs shell">ln: failed to create symbolic link &#x27;/usr/bin/xxx&#x27;: File exists</code></pre><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><pre><code class="hljs shell">rm -rf /usr/bin/xxx</code></pre><p>再进行ln -s操作就解决了。</p>]]></content>
     
     
     <categories>
