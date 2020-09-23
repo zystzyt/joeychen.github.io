@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
+Disallow: /about/
+
+Sitemap: https://zystzyt.github.io/sitemap.xml
