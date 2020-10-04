@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Joey Chen">
   <meta name="keywords" content="">
-  <title>我的第一条博客文章 - Joey_Chen&#39;s blog</title>
+  <title>使用 vellum 完成我的世界地图备份和渲染网页地图 - Joey_Chen&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -167,8 +167,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-08-01 08:00" pubdate>
-        2020年8月1日 早上
+      <time datetime="2020-09-12 13:13" pubdate>
+        2020年9月12日 下午
       </time>
     </span>
   
@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2 字
+      1.1k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      15
        分钟
     </span>
   
@@ -227,10 +227,145 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">我的第一条博客文章</h1>
+            <h1 style="display: none">使用 vellum 完成我的世界地图备份和渲染网页地图</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>
+              <h1 id="使用-vellum-完成我的世界地图备份和渲染"><a href="#使用-vellum-完成我的世界地图备份和渲染" class="headerlink" title="使用 vellum 完成我的世界地图备份和渲染"></a>使用 vellum 完成我的世界地图备份和渲染</h1><h2 id="安装-vellum"><a href="#安装-vellum" class="headerlink" title="安装 vellum"></a>安装 vellum</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>浏览器打开vellum仓库</p>
+<div class="hljs"><pre><code class="hljs awk">https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/clarkx86/</span>vellum/releases</code></pre></div>
+<p>找到 <em>vellum_linux-x64-bundled_v目前版本.zip</em> 鼠标右键复制链接地址，回到服务器输入以下指令：<br> <div class="hljs"><pre><code class="hljs shell">mkdir vellum; \
+cd vellum; \
+wget https://github.com/clarkx86/vellum/releases/download/v1.2.3/vellum_linux-x64-bundled_v目前版本.zip; \
+unzip vellum_linux-x64-bundled_v目前版本.zip; \
+chmod +x ./vellum; \
+./vellum</code></pre></div></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>vellum目录会生成 <em>configuration.json</em> 的文件，这是我们要配置的。下面是每一项的描述：</p>
+<div class="hljs"><pre><code class="hljs asciidoc">KEY               VALUE               ABOUT
+----------------------------------------------------------
+必要设置
+-----------------
+BdsBinPath         String  (!)        基岩服务器启动文件路径，比如（
+<span class="hljs-code">									  Linux的&quot;/../../bedrock_server&quot;</span>
+<span class="hljs-code">									  Windows的 &quot;/../../bedrock_server.exe&quot;）</span>
+
+WorldName          String  (!)        要备份的世界名字，在 /worlds/里
+<span class="hljs-code">                                      填写的是世界的名字不是路径</span>
+---------------
+备份设置
+---------------
+EnableBackups      Boolean (!)        备份文件是否保存为 .zip 格式。
+
+BackupInterval     Double             距离上次备份的间隔时间，以“分钟”为单位。
+
+ArchivePath        String             创建备份的保存路径。
+
+BackupsToKeep      Integer            保留在“ArchivePath”也就是备份路径里的备份数量，
+<span class="hljs-code">									  超过这个数量会把旧备份删除掉.</span>
+<span class="hljs-code">									  </span>
+OnActiviyOnly      Boolean            如果设置为“true”，vellum只会在上次备份后至少有
+<span class="hljs-code">									  一个玩家连接的情况下执行备份，以便只存档实际修改过的世界。</span>
+
+StopBeforeBackup   Boolean            是否停止服务器进行备份，备份完成后自动重启服务器
+<span class="hljs-code">                                      而不是进行热备份。</span>
+
+NotifyBeforeStop   Integer            停止服务器进行备份之前，在游戏聊天窗口广播服务器停
+<span class="hljs-code">									  止倒计时，以秒为单位。</span>
+
+BackupOnStartup    Boolean            是否在服务器启动之前进行备份，强烈建议将此设置
+<span class="hljs-code">                                      保留为“ true”。</span>
+
+PreExec            String             每次备份开始前执行的指令，可选。
+
+PostExec           String             每次备份结束后执行的指令，可选。
+---------------
+渲染世界地图设置
+---------------
+EnableRenders      Boolean (!)        是否使用 “PapyrusCS” 渲染世界地图。
+
+PapyrusBinPath     String             PapyrusCS所在文件目录，比如（
+<span class="hljs-code">                                      Linux的&quot;/../../PapyrusCs&quot; </span>
+<span class="hljs-code">                                      Windows的&quot;/../../PapyrusCs.exe&quot;）。</span>
+
+PapyrusOutputPath  String             渲染后世界地图文件输出路径。
+
+RenderInterval     Double             距离上次渲染的间隔世界，以分钟为单位。
+
+PapyrusGlobalArgs  String             执行渲染的全局参数，请勿更改已经提供
+<span class="hljs-code">                                      的--world和--ouput参数                                      </span>
+<span class="hljs-code">                                      详细参数详解参考以下链接：</span>
+<span class="hljs-code">                                      https://github.com/mjungnickel18/papyruscs</span>
+<span class="hljs-code">                                      </span>
+PapyrusTasks       String [Array]     papyrus 的附加参数数组，其中每个数组
+<span class="hljs-code">									  条目在前一个完成后会执行另一个PapyrusCS过程</span>
+<span class="hljs-code">									  （例如，用于渲染多个尺寸）</span>
+-------------------
+其他设置
+-------------------
+QuietMode          Boolean (!)        禁止通知游戏中的玩家<span class="hljs-strong">*vellum*</span>正在创建备份和渲染
+
+HideStdout         Boolean (!)        是否隐藏PapyrusCS渲染过程生成的控制台输出，
+<span class="hljs-code">									  将其设置为“ true”可能有助于调试您的配置。</span>
+
+BusyCommands       Boolean (!)        在vellum进行备份时是否允许执行BDS命令
+
+CheckForUpdates    Boolean (!)        是否在启动时检查更新
+
+StopBdsOnException Boolean (!)        如果* vellum <span class="hljs-strong">*运行异常而意外崩溃，</span>
+<span class="hljs-strong">									  是否向BDS进程发送“stop”命令，</span>
+<span class="hljs-strong">									  以防止其继续以分离模式运行。</span>
+<span class="hljs-strong">----------------------------------------------------------</span>
+<span class="hljs-strong">*</span>标有（！）的值为必填项</code></pre></div>
+<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><div class="hljs"><pre><code class="hljs json">&#123;
+  <span class="hljs-attr">&quot;BdsBinPath&quot;</span>: <span class="hljs-string">&quot;/root/mc/bedrock_server&quot;</span>,
+  <span class="hljs-attr">&quot;WorldName&quot;</span>: <span class="hljs-string">&quot;Bedrock level&quot;</span>,
+  <span class="hljs-attr">&quot;Backups&quot;</span>: &#123;
+    <span class="hljs-attr">&quot;EnableBackups&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;BackupInterval&quot;</span>: <span class="hljs-number">60.0</span>,
+    <span class="hljs-attr">&quot;ArchivePath&quot;</span>: <span class="hljs-string">&quot;./backupsmc/&quot;</span>,
+    <span class="hljs-attr">&quot;BackupsToKeep&quot;</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">&quot;OnActivityOnly&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">&quot;StopBeforeBackup&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">&quot;NotifyBeforeStop&quot;</span>: <span class="hljs-number">60</span>,
+    <span class="hljs-attr">&quot;BackupOnStartup&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;PreExec&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-attr">&quot;PostExec&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  &#125;,
+  <span class="hljs-attr">&quot;Renders&quot;</span>: &#123;
+    <span class="hljs-attr">&quot;EnableRenders&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;PapyrusBinPath&quot;</span>: <span class="hljs-string">&quot;/root/papyruscs/PapyrusCs&quot;</span>,
+    <span class="hljs-attr">&quot;PapyrusOutputPath&quot;</span>: <span class="hljs-string">&quot;constructmc&quot;</span>,
+    <span class="hljs-attr">&quot;RenderInterval&quot;</span>: <span class="hljs-number">60.0</span>,
+    <span class="hljs-attr">&quot;PapyrusGlobalArgs&quot;</span>: <span class="hljs-string">&quot;-w $WORLD_PATH -o $OUTPUT_PATH --htmlfile index.html -f png -q 100 --deleteexistingupdatefolder&quot;</span>,
+    <span class="hljs-attr">&quot;PapyrusTasks&quot;</span>: [
+      <span class="hljs-string">&quot;--dim 0&quot;</span>
+    ]
+  &#125;,
+  <span class="hljs-attr">&quot;QuietMode&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">&quot;HideStdout&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;BusyCommands&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;CheckForUpdates&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;StopBdsOnException&quot;</span>: <span class="hljs-literal">true</span>
+&#125;</code></pre></div>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>configuration.json配置完成后运行vellum<br> <div class="hljs"><pre><code class="hljs shell">./vellum</code></pre></div></p>
+<h2 id="参数与命令"><a href="#参数与命令" class="headerlink" title="参数与命令"></a>参数与命令</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p> 可用启动参数概述：</p>
+<div class="hljs"><pre><code class="hljs asciidoc">PARAMETER                             ABOUT
+----------------------------------------------------------
+-c | --configuration                  指定自定义配置文件。 
+<span class="hljs-code">										 （默认：configuration.json）</span>
+
+-h | --help                           打印可用参数的概述。</code></pre></div>
+<p>参数是可选的，如果未指定，则默认为默认值</p>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p> vellum还提供了一些新功能，并重载了一些现有命令，您可以执行这些命令来强制调用备份或渲染任务并计划服务器关闭。</p>
+<div class="hljs"><pre><code class="hljs asciidoc"><span class="hljs-code"> COMMAND                               ABOUT</span>
+----------------------------------------------------------
+force start backup                    强制执行备份
+
+force start render                    强制PapyrusCS渲染世界
+
+stop &lt;time in seconds&gt;                安排服务器关闭并在游戏中通知玩家
+
+reload vellum                         重新加载先前指定的（或默认的）配置文件
+
+updatecheck                           获取最新的BDS和vellum版本并将其显示在控制台中</code></pre></div>
             </div>
             <hr>
             <div>
@@ -239,10 +374,19 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/remember/">remember</a>
+                      <a class="hover-with-bg" href="/categories/Minecraft/">Minecraft</a>
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Minecraft/">Minecraft</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vellum/">vellum</a>
+                    
+                  </div>
                 
               </div>
               
@@ -253,15 +397,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/06/Linux%E4%B8%8B%E6%93%8D%E4%BD%9Cln%20-s%E6%8C%87%E4%BB%A4%E5%87%BA%E7%8E%B0File%20exists%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux下操作ln -s指令出现File exists的解决方法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/2343020999/">
+                        <span class="hidden-mobile">Linux执行.sh文件出现cd xxx\r ：No such file or directory</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -519,7 +663,7 @@
       if ('true' === 'true') {
         var viewCtn = document.querySelector('#leancloud-post-views-container');
         if (viewCtn || enableIncr) {
-          var target = decodeURI('/2020/08/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/');
+          var target = decodeURI('/posts/2091446885/');
           var viewGetter = getRecord(Counter, target).then((record) => {
             incrArr.push(buildIncrement(record.objectId))
             if (viewCtn) {
@@ -613,7 +757,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "我的第一条博客文章&nbsp;",
+        "使用 vellum 完成我的世界地图备份和渲染网页地图&nbsp;",
       ],
       cursorChar: "📖",
       typeSpeed: 70,
