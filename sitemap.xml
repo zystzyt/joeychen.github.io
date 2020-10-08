@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zystzyt.github.io/posts/1385503902/</loc>
-    
-    <lastmod>2020-10-04</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zystzyt.github.io/posts/2091446885/</loc>
     
     <lastmod>2020-10-04</lastmod>
@@ -91,13 +84,6 @@
   
   <url>
     <loc>https://zystzyt.github.io/categories/Minecraft/</loc>
-    <lastmod>2020-10-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zystzyt.github.io/categories/remember/</loc>
     <lastmod>2020-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
