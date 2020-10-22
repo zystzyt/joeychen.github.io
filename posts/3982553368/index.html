@@ -221,8 +221,8 @@
             
             <div class="markdown-body" id="post-body">
               <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>操作ln -s给文件创建软链接时会出现以下情况，xxx文件以存在。</p>
-<pre><code class="hljs shell">ln: failed to create symbolic link &#x27;/usr/bin/xxx&#x27;: File exists</code></pre>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><pre><code class="hljs shell">rm -rf /usr/bin/xxx</code></pre>
+<div class="hljs"><pre><code class="hljs shell">ln: failed to create symbolic link &#x27;/usr/bin/xxx&#x27;: File exists</code></pre></div>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><div class="hljs"><pre><code class="hljs shell">rm -rf /usr/bin/xxx</code></pre></div>
 <p>再进行ln -s操作就解决了。</p>
 
             </div>

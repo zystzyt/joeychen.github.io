@@ -222,14 +222,14 @@
             <div class="markdown-body" id="post-body">
               <h1 id="Linux执行-sh文件出现cd-xxx-r-：No-such-file-or-directory"><a href="#Linux执行-sh文件出现cd-xxx-r-：No-such-file-or-directory" class="headerlink" title="Linux执行.sh文件出现cd xxx\r ：No such file or directory"></a>Linux执行.sh文件出现cd xxx\r ：No such file or directory</h1><p>为了方便通常会在windows系统下创建好shell文件后上传到linux服务器里运行。运行后报错：No such file or directory（无此文件或目录）。大多是因为2个不同系统直接所用的文件格式不对应导致的。</p>
 <p>来到Linux服务器端，输入以下指令查看文件格式。</p>
-<pre><code class="hljs shell">cd File Directory   #“File Directory”为.sh文件所在的目录
-vi File name.sh     #“File name”为报错的.sh文件名</code></pre>
+<div class="hljs"><pre><code class="hljs shell">cd File Directory   #“File Directory”为.sh文件所在的目录
+vi File name.sh     #“File name”为报错的.sh文件名</code></pre></div>
 
 <p>在命令模式下，也就是刚进去时的界面输入：</p>
-<pre><code class="hljs shell">:set ff   #查看文件格式</code></pre>
+<div class="hljs"><pre><code class="hljs shell">:set ff   #查看文件格式</code></pre></div>
 <p>如返回值为 fileformat=dos ，输入以下指令把 “dos” 设置为 “unix” :</p>
-<pre><code class="hljs shell">:set ff=unix   #把.sh文件格式设置为unix
-：wq           #保存并退出vim编辑器</code></pre>
+<div class="hljs"><pre><code class="hljs shell">:set ff=unix   #把.sh文件格式设置为unix
+：wq           #保存并退出vim编辑器</code></pre></div>
 <p>这时候在执行以下.sh文件就不会出问题了。</p>
 
             </div>

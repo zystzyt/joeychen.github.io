@@ -221,15 +221,15 @@
             
             <div class="markdown-body" id="post-body">
               <h1 id="使用-vellum-完成我的世界地图备份和渲染"><a href="#使用-vellum-完成我的世界地图备份和渲染" class="headerlink" title="使用 vellum 完成我的世界地图备份和渲染"></a>使用 vellum 完成我的世界地图备份和渲染</h1><h2 id="安装-vellum"><a href="#安装-vellum" class="headerlink" title="安装 vellum"></a>安装 vellum</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>浏览器打开vellum仓库</p>
-<pre><code class="hljs awk">https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/clarkx86/</span>vellum/releases</code></pre>
-<p>找到 <em>vellum_linux-x64-bundled_v目前版本.zip</em> 鼠标右键复制链接地址，回到服务器输入以下指令：<br> <pre><code class="hljs shell">mkdir vellum; \
+<div class="hljs"><pre><code class="hljs awk">https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/clarkx86/</span>vellum/releases</code></pre></div>
+<p>找到 <em>vellum_linux-x64-bundled_v目前版本.zip</em> 鼠标右键复制链接地址，回到服务器输入以下指令：<br> <div class="hljs"><pre><code class="hljs shell">mkdir vellum; \
 cd vellum; \
 wget https://github.com/clarkx86/vellum/releases/download/v1.2.3/vellum_linux-x64-bundled_v目前版本.zip; \
 unzip vellum_linux-x64-bundled_v目前版本.zip; \
 chmod +x ./vellum; \
-./vellum</code></pre></p>
+./vellum</code></pre></div></p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>vellum目录会生成 <em>configuration.json</em> 的文件，这是我们要配置的。下面是每一项的描述：</p>
-<pre><code class="hljs asciidoc">KEY               VALUE               ABOUT
+<div class="hljs"><pre><code class="hljs asciidoc">KEY               VALUE               ABOUT
 ----------------------------------------------------------
 必要设置
 -----------------
@@ -303,8 +303,8 @@ StopBdsOnException Boolean (!)        如果* vellum <span class="hljs-strong">*
 <span class="hljs-strong">									  是否向BDS进程发送“stop”命令，</span>
 <span class="hljs-strong">									  以防止其继续以分离模式运行。</span>
 <span class="hljs-strong">----------------------------------------------------------</span>
-<span class="hljs-strong">*</span>标有（！）的值为必填项</code></pre>
-<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><pre><code class="hljs json">&#123;
+<span class="hljs-strong">*</span>标有（！）的值为必填项</code></pre></div>
+<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><div class="hljs"><pre><code class="hljs json">&#123;
   <span class="hljs-attr">&quot;BdsBinPath&quot;</span>: <span class="hljs-string">&quot;/root/mc/bedrock_server&quot;</span>,
   <span class="hljs-attr">&quot;WorldName&quot;</span>: <span class="hljs-string">&quot;Bedrock level&quot;</span>,
   <span class="hljs-attr">&quot;Backups&quot;</span>: &#123;
@@ -334,18 +334,18 @@ StopBdsOnException Boolean (!)        如果* vellum <span class="hljs-strong">*
   <span class="hljs-attr">&quot;BusyCommands&quot;</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">&quot;CheckForUpdates&quot;</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">&quot;StopBdsOnException&quot;</span>: <span class="hljs-literal">true</span>
-&#125;</code></pre>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>configuration.json配置完成后运行vellum<br> <pre><code class="hljs shell">./vellum</code></pre></p>
+&#125;</code></pre></div>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>configuration.json配置完成后运行vellum<br> <div class="hljs"><pre><code class="hljs shell">./vellum</code></pre></div></p>
 <h2 id="参数与命令"><a href="#参数与命令" class="headerlink" title="参数与命令"></a>参数与命令</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p> 可用启动参数概述：</p>
-<pre><code class="hljs asciidoc">PARAMETER                             ABOUT
+<div class="hljs"><pre><code class="hljs asciidoc">PARAMETER                             ABOUT
 ----------------------------------------------------------
 -c | --configuration                  指定自定义配置文件。 
 <span class="hljs-code">										 （默认：configuration.json）</span>
 
--h | --help                           打印可用参数的概述。</code></pre>
+-h | --help                           打印可用参数的概述。</code></pre></div>
 <p>参数是可选的，如果未指定，则默认为默认值</p>
 <h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p> vellum还提供了一些新功能，并重载了一些现有命令，您可以执行这些命令来强制调用备份或渲染任务并计划服务器关闭。</p>
-<pre><code class="hljs asciidoc"><span class="hljs-code"> COMMAND                               ABOUT</span>
+<div class="hljs"><pre><code class="hljs asciidoc"><span class="hljs-code"> COMMAND                               ABOUT</span>
 ----------------------------------------------------------
 force start backup                    强制执行备份
 
@@ -355,7 +355,7 @@ stop &lt;time in seconds&gt;                安排服务器关闭并在游戏中
 
 reload vellum                         重新加载先前指定的（或默认的）配置文件
 
-updatecheck                           获取最新的BDS和vellum版本并将其显示在控制台中</code></pre>
+updatecheck                           获取最新的BDS和vellum版本并将其显示在控制台中</code></pre></div>
             </div>
             <hr>
             <div>
