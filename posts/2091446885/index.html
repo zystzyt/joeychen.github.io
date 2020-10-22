@@ -34,8 +34,6 @@
   
 
   
-    <link  rel="stylesheet" href="/css/gitalk.css" />
-  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -196,14 +194,6 @@
 
   
   
-    
-      <!-- LeanCloud 统计文章PV -->
-      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="leancloud-post-views"></span> 次
-      </span>
-    
-  
 </div>
 
             
@@ -231,15 +221,15 @@
             
             <div class="markdown-body" id="post-body">
               <h1 id="使用-vellum-完成我的世界地图备份和渲染"><a href="#使用-vellum-完成我的世界地图备份和渲染" class="headerlink" title="使用 vellum 完成我的世界地图备份和渲染"></a>使用 vellum 完成我的世界地图备份和渲染</h1><h2 id="安装-vellum"><a href="#安装-vellum" class="headerlink" title="安装 vellum"></a>安装 vellum</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>浏览器打开vellum仓库</p>
-<div class="hljs"><pre><code class="hljs awk">https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/clarkx86/</span>vellum/releases</code></pre></div>
-<p>找到 <em>vellum_linux-x64-bundled_v目前版本.zip</em> 鼠标右键复制链接地址，回到服务器输入以下指令：<br> <div class="hljs"><pre><code class="hljs shell">mkdir vellum; \
+<pre><code class="hljs awk">https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/clarkx86/</span>vellum/releases</code></pre>
+<p>找到 <em>vellum_linux-x64-bundled_v目前版本.zip</em> 鼠标右键复制链接地址，回到服务器输入以下指令：<br> <pre><code class="hljs shell">mkdir vellum; \
 cd vellum; \
 wget https://github.com/clarkx86/vellum/releases/download/v1.2.3/vellum_linux-x64-bundled_v目前版本.zip; \
 unzip vellum_linux-x64-bundled_v目前版本.zip; \
 chmod +x ./vellum; \
-./vellum</code></pre></div></p>
+./vellum</code></pre></p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>vellum目录会生成 <em>configuration.json</em> 的文件，这是我们要配置的。下面是每一项的描述：</p>
-<div class="hljs"><pre><code class="hljs asciidoc">KEY               VALUE               ABOUT
+<pre><code class="hljs asciidoc">KEY               VALUE               ABOUT
 ----------------------------------------------------------
 必要设置
 -----------------
@@ -313,8 +303,8 @@ StopBdsOnException Boolean (!)        如果* vellum <span class="hljs-strong">*
 <span class="hljs-strong">									  是否向BDS进程发送“stop”命令，</span>
 <span class="hljs-strong">									  以防止其继续以分离模式运行。</span>
 <span class="hljs-strong">----------------------------------------------------------</span>
-<span class="hljs-strong">*</span>标有（！）的值为必填项</code></pre></div>
-<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><div class="hljs"><pre><code class="hljs json">&#123;
+<span class="hljs-strong">*</span>标有（！）的值为必填项</code></pre>
+<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><pre><code class="hljs json">&#123;
   <span class="hljs-attr">&quot;BdsBinPath&quot;</span>: <span class="hljs-string">&quot;/root/mc/bedrock_server&quot;</span>,
   <span class="hljs-attr">&quot;WorldName&quot;</span>: <span class="hljs-string">&quot;Bedrock level&quot;</span>,
   <span class="hljs-attr">&quot;Backups&quot;</span>: &#123;
@@ -344,18 +334,18 @@ StopBdsOnException Boolean (!)        如果* vellum <span class="hljs-strong">*
   <span class="hljs-attr">&quot;BusyCommands&quot;</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">&quot;CheckForUpdates&quot;</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">&quot;StopBdsOnException&quot;</span>: <span class="hljs-literal">true</span>
-&#125;</code></pre></div>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>configuration.json配置完成后运行vellum<br> <div class="hljs"><pre><code class="hljs shell">./vellum</code></pre></div></p>
+&#125;</code></pre>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>configuration.json配置完成后运行vellum<br> <pre><code class="hljs shell">./vellum</code></pre></p>
 <h2 id="参数与命令"><a href="#参数与命令" class="headerlink" title="参数与命令"></a>参数与命令</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p> 可用启动参数概述：</p>
-<div class="hljs"><pre><code class="hljs asciidoc">PARAMETER                             ABOUT
+<pre><code class="hljs asciidoc">PARAMETER                             ABOUT
 ----------------------------------------------------------
 -c | --configuration                  指定自定义配置文件。 
 <span class="hljs-code">										 （默认：configuration.json）</span>
 
--h | --help                           打印可用参数的概述。</code></pre></div>
+-h | --help                           打印可用参数的概述。</code></pre>
 <p>参数是可选的，如果未指定，则默认为默认值</p>
 <h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p> vellum还提供了一些新功能，并重载了一些现有命令，您可以执行这些命令来强制调用备份或渲染任务并计划服务器关闭。</p>
-<div class="hljs"><pre><code class="hljs asciidoc"><span class="hljs-code"> COMMAND                               ABOUT</span>
+<pre><code class="hljs asciidoc"><span class="hljs-code"> COMMAND                               ABOUT</span>
 ----------------------------------------------------------
 force start backup                    强制执行备份
 
@@ -365,7 +355,7 @@ stop &lt;time in seconds&gt;                安排服务器关闭并在游戏中
 
 reload vellum                         重新加载先前指定的（或默认的）配置文件
 
-updatecheck                           获取最新的BDS和vellum版本并将其显示在控制台中</code></pre></div>
+updatecheck                           获取最新的BDS和vellum版本并将其显示在控制台中</code></pre>
             </div>
             <hr>
             <div>
@@ -412,38 +402,6 @@ updatecheck                           获取最新的BDS和vellum版本并将其
               
             </div>
 
-            
-              <!-- Comments -->
-              <article class="comments" id="comments">
-                
-                
-  <div id="gitalk-container"></div>
-  <script type="text/javascript">
-    function loadGitalk() {
-      addScript('https://cdn.staticfile.org/blueimp-md5/2.13.0/js/md5.min.js');
-      addScript('https://cdn.staticfile.org/gitalk/1.6.2/gitalk.min.js', function () {
-        var gitalk = new Gitalk({
-          clientID: 'e9e72afad7af43e8c30b',
-          clientSecret: '45c70f1d0607558d9bc34007898127c63806265b',
-          repo: 'zystzyt.github.io',
-          owner: 'zystzyt',
-          admin: ["zystzyt"],
-          id: md5(location.pathname),
-          language: 'zh-CN',
-          labels: ["Gitalk"],
-          perPage: 10,
-          pagerDirection: 'last',
-          createIssueManually: true,
-          distractionFreeMode: false
-        });
-        gitalk.render('gitalk-container');
-      });
-    }
-    waitElementVisible('gitalk-container', loadGitalk);
-  </script>
-
-
-              </article>
             
           </article>
         </div>
@@ -532,186 +490,6 @@ updatecheck                           获取最新的BDS和vellum版本并将其
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
   <script  src="/js/clipboard-use.js" ></script>
 
-
-
-  <script defer>
-  (function () {
-    // 查询存储的记录
-    function getRecord(Counter, target) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {target, time: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    }
-
-    // 发起自增请求
-    function increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    }
-
-    // 构建自增请求体
-    function buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "time": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    }
-
-    // 校验是否为有效的 UV
-    function validUV() {
-      var key = 'LeanCloud_UV_Flag';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    }
-
-    function addCount(Counter) {
-      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
-      var getterArr = [];
-      var incrArr = [];
-
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#leancloud-site-pv-container');
-      if (pvCtn || enableIncr) {
-        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
-          incrArr.push(buildIncrement(record.objectId))
-          var ele = document.querySelector('#leancloud-site-pv');
-          if (ele) {
-            ele.innerText = record.time + 1;
-            if (pvCtn) {
-              pvCtn.style.display = 'inline';
-            }
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#leancloud-site-uv-container');
-      if (uvCtn || enableIncr) {
-        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
-          var vuv = validUV();
-          vuv && incrArr.push(buildIncrement(record.objectId))
-          var ele = document.querySelector('#leancloud-site-uv');
-          if (ele) {
-            ele.innerText = record.time + (vuv ? 1 : 0);
-            if (uvCtn) {
-              uvCtn.style.display = 'inline';
-            }
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 如果是文章，请求文章的浏览数，并自增
-      if ('true' === 'true') {
-        var viewCtn = document.querySelector('#leancloud-post-views-container');
-        if (viewCtn || enableIncr) {
-          var target = decodeURI('/posts/2091446885/');
-          var viewGetter = getRecord(Counter, target).then((record) => {
-            incrArr.push(buildIncrement(record.objectId))
-            if (viewCtn) {
-              var ele = document.querySelector('#leancloud-post-views');
-              if (ele) {
-                ele.innerText = (record.time || 0) + 1;
-                viewCtn.style.display = 'inline';
-              }
-            }
-          });
-          getterArr.push(viewGetter);
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && increment(Counter, incrArr);
-        })
-      }
-    }
-
-    var app_id = 'TBzubKykVY7NxCny3Fy7XW1p-gzGzoHsz'
-    var app_key = 'n9EyQ9HH5DKrqmFC5U9Yzf1b'
-    var server_url = 'https://tbzubkyk.lc-cn-n1-shared.com'
-
-    function fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': app_id,
-            'X-LC-Key': app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-
-      addCount(Counter);
-    }
-
-    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(resp => resp.json())
-        .then(({api_server}) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
 
 
 
@@ -817,37 +595,6 @@ updatecheck                           获取最新的BDS和vellum版本并将其
 
 
 
-
-
-  
-
-  
-    <!-- Google Analytics -->
-    <script defer>
-      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
-      ga.l = +new Date;
-      ga('create', 'UA-177430854-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-  
-
-  
-    <!-- Google gtag.js -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177430854-1"></script>
-    <script defer>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-177430854-1');
-    </script>
-  
-
-  
-
-  
-
-  
 
 
 
